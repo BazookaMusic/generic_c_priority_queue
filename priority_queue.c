@@ -2,7 +2,7 @@
 #include <string.h>
 
 /* implementation notes 
--- Queue is 1 based for easier index calculation */
+-- Queue is 1-indexed for easier index calculation */
 
 void queue_debug(p_queue * queue)
 {
