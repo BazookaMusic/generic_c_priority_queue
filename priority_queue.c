@@ -301,9 +301,3 @@ int queue_clear(p_queue * q, enum DEEPCLEAR behavior)
     }
         
 }
-
-
-int main()
-{
-    return 0;
-}
