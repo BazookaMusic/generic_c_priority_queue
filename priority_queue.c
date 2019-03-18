@@ -298,60 +298,8 @@ int queue_clear(p_queue * q, enum DeepClear behavior)
         
 }
 
-typedef struct hello
-{
-    int a;
-    int b;
-    int c[10000];
-} hello;
 
 int main()
 {
-    p_queue * queue;
-    tuple * tup;
-    hello * a;
-    queue = init_queue(1000,MAX);
-    for(size_t i = 0; i < 1000; i++)
-    {
-        a = malloc(sizeof(hello));
-        tup = malloc(sizeof(tuple));
-        a->a = i;
-        a->b = i+1;
-        tup->item = a;
-        tup->priority = a->a * a->b;
-        push(queue,tup);
-    }
-
-    for(size_t i = 0; i < 1000; i++)
-    {
-        tup = pop(queue);
-        a = (hello *)(tup->item);
-        printf("%d %d : %f \n",a->a, a->b ,tup->priority);
-
-    }
-    
-    
-/*
-    int b = 14;
-    p_queue * queue;
-    tuple * test;
-    int prev = -1;
-    double curr = 0;
-    
-    queue = init_queue(10,MAX);
-    double j = 0.0;
-    for(size_t i = 0; i < 10; i++)
-    {
-        j += 1.0;
-        test = malloc(sizeof(tuple));
-        test->priority = j;
-        printf("%f \n", test->priority);
-        push(queue, test);
-    }
-
-*/
-
-    
-
     return 0;
 }
