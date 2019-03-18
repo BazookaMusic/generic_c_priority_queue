@@ -60,12 +60,12 @@ p_queue * init_queue( size_t size, enum Order order)
     q->data = (tuple *)malloc((size+1) * sizeof(tuple));
     if (!q)
     {
-        //
+        // out of memory
         return NULL;
     }
    
-        
-    return q; //  valid queue 
+    //  valid queue     
+    return q; 
     
 }
 
@@ -117,6 +117,10 @@ p_queue * push(p_queue * queue, tuple * item)
 
     // sift up
 
+    /* parent(n)
+     /       \
+  child(2n)      child2 (2n + 1) */
+
     
     int child = queue->count; // child node
     int parent = child >> 1;  // parent
@@ -148,7 +152,7 @@ p_queue * push(p_queue * queue, tuple * item)
 int isEmpty(p_queue * q)
 {
     // return -1 for null queue
-    return q ? q->count > 0: -1;
+    return q ? q->count == 0: -1;
 }
 
 tuple * peek(p_queue * queue)
