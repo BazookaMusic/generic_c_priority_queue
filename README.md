@@ -51,6 +51,7 @@ for(size_t i = 0; i < 1000; i++)
     tup->item = a;
     tup->priority = a->a * a->b;
     
+
     // put data in queue
     push(queue,tup);
 }
@@ -59,8 +60,10 @@ for(size_t i = 0; i < 1000; i++)
     {
         //get data 
         tup = pop(queue);
+
         // cast into proper type
         a = (hello *)(tup->item);
+        
         // hooray, queue returns in proper order
         printf("%d %d : %f \n",a->a, a->b ,tup->priority);
 
