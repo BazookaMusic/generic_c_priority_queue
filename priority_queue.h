@@ -12,7 +12,7 @@ typedef struct{
 } tuple;
 
 enum Order {MAX = 1, MIN = 0};
-enum DeepClear {PURGE,OVERWRITE};
+enum DEEPCLEAR {PURGE,OVERWRITE};
 
 // actual queue
 typedef struct{
@@ -42,11 +42,11 @@ tuple * peek(p_queue * queue);
 
 // set queue ordering (max/min)
 // returns queue struct
-p_queue * setOrder(p_queue * q, enum Order order);
+p_queue * set_order(p_queue * q, enum Order order);
 
 // self explanatory for valid queues
 // returns -1 if provided with a null queue
-int isEmpty(p_queue * q);
+int is_empty(p_queue * q);
 
 
 
@@ -54,7 +54,7 @@ int isEmpty(p_queue * q);
 // behavior = PURE: free memory of contents and free queue struct
 // behavior = OVERWRITE: zero contents and reset struct
 // returns 0 for success, -1 for failure
-int queue_clear(p_queue * q, enum DeepClear behavior);
+int queue_clear(p_queue * q, enum DEEPCLEAR behavior);
 
 
 

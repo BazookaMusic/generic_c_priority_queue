@@ -20,7 +20,7 @@ void queue_debug(p_queue * queue)
     printf("Invalid header");
 }
 
-p_queue * setOrder(p_queue * q, enum Order order)
+p_queue * set_order(p_queue * q, enum Order order)
 {
     // set min or max queue
     if (q)
@@ -75,7 +75,7 @@ p_queue * push(p_queue * queue, tuple * item)
     // invalid queue
     if (!queue)
     {
-        perror("Null queue pointer");
+        // Null queue pointer
         return NULL; // insert error
     }
 
@@ -149,7 +149,7 @@ p_queue * push(p_queue * queue, tuple * item)
      
 }
 
-int isEmpty(p_queue * q)
+int is_empty(p_queue * q)
 {
     // return -1 for null queue
     return q ? q->count == 0: -1;
@@ -163,7 +163,7 @@ tuple * peek(p_queue * queue)
      // invalid queue
     if (!queue)
     {
-        perror("Null queue pointer");
+        // null queue
         return NULL; // insert error
     }
 
@@ -182,7 +182,7 @@ tuple * pop(p_queue * queue)
     tuple * tup; // return value
     if (!queue)
     {
-        perror("Null queue pointer");
+        //Null queue pointer
         return NULL;
     }
     
@@ -262,7 +262,7 @@ tuple * pop(p_queue * queue)
 
 }
 
-int queue_clear(p_queue * q, enum DeepClear behavior)
+int queue_clear(p_queue * q, enum DEEPCLEAR behavior)
 {
     /* PURGE will free all the memory and erase the queue
     OVERWRITE zeroes contents and resets the structure
