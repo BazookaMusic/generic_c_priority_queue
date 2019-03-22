@@ -79,6 +79,13 @@ p_queue * push(p_queue * queue, tuple * item)
         return NULL; // insert error
     }
 
+    if (!item)
+    {
+        // can't insert null tuple
+        // it doesn't have a priority
+        return NULL;
+    }
+
 
     // not enough space allocated
     if (queue->count > queue->curr_size - 1)
@@ -301,3 +308,5 @@ int queue_clear(p_queue * q, enum DEEPCLEAR behavior)
     }
         
 }
+
+
